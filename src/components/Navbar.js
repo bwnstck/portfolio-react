@@ -13,16 +13,18 @@ import { useState } from "react";
 import { isMobile } from "../screens/lib/responsiveHelpers";
 
 const menuItems = [
-  { name: "CV", id: "cv" },
-  { name: "Tech", id: "tech" },
-  { name: "Projects", id: "projects" },
-  { name: "About me", id: "aboutme" },
+  { name: "CV", id: "cv", img: "👩‍🎤" },
+  { name: "Tech", id: "tech", img: "💻" },
+  { name: "Projects", id: "projects", img: "🕹" },
+  { name: "About", id: "about", img: "🥷🏻" },
+  { name: "Contact", id: "contact", img: "🕊" },
 ];
 const ITEM_HEIGHT = 48;
 
 const Navbar = ({ active, handleActive }) => {
   const [showMenu, setShowMenu] = useState(!isMobile());
   const [anchorEl, setAnchorEl] = useState(null);
+
   const open = Boolean(anchorEl);
 
   window.addEventListener("resize", function () {
@@ -42,7 +44,7 @@ const Navbar = ({ active, handleActive }) => {
   };
 
   return (
-    <NavbarWrapper>
+    <NavbarWrapper mobile={!showMenu}>
       <a
         href="#outerSpace"
         onClick={() => {
@@ -64,21 +66,13 @@ const Navbar = ({ active, handleActive }) => {
                       handleActive(menuItem);
                     }}
                   >
+                    {menuItem.img}
                     {menuItem.name}
                   </StyledLink>
                 </li>
-                <span>•</span>
+                <span>::</span>
               </React.Fragment>
             ))}
-            <StyledLink
-              selected={active === menuItems[-1]}
-              href="#contact"
-              onClick={() => {
-                handleActive(menuItems[-1]);
-              }}
-            >
-              Contact
-            </StyledLink>
           </>
         ) : (
           <PopupMenu>
@@ -124,29 +118,21 @@ const Navbar = ({ active, handleActive }) => {
                       handleActive(menuItem);
                     }}
                   >
-                    {menuItem.name}
+                    {menuItem.img} {menuItem.name}
                   </StyledLink>
                 </MenuItem>
               ))}
-              <MenuItem>
-                <StyledLink
-                  toggleMenu={!showMenu}
-                  selected={active === menuItems[-1]}
-                  href="#contact"
-                  onClick={() => {
-                    handleActive(menuItems[-1]);
-                  }}
-                >
-                  Contact
-                </StyledLink>
-              </MenuItem>
             </Menu>
           </PopupMenu>
         )}
       </ul>
       <div>
-        <Social src={GithubSrc} alt="Github" />
-        <Social src={LinkedInSrc} alt="LinkedIn" />
+        <a href="https://github.com/bwnstck">
+          <Social src={GithubSrc} alt="Github" />
+        </a>
+        <a href="https://www.linkedin.com/bweinstock/">
+          <Social src={LinkedInSrc} alt="LinkedIn" />
+        </a>
       </div>
     </NavbarWrapper>
   );
@@ -154,7 +140,6 @@ const Navbar = ({ active, handleActive }) => {
 const PopupMenu = styled.div`
   button {
     font-size: 2rem;
-    /* padding: 0.1rem 0.5rem; */
     color: white;
     svg {
       font-size: 2.25rem;
@@ -163,18 +148,16 @@ const PopupMenu = styled.div`
 `;
 const StyledLink = styled.a`
   margin: auto;
-  font-size: clamp(1rem, 6vw, 1.4rem);
+  font-size: clamp(0.8rem, 6vw, 1.4rem);
   transition: var(--transition);
   cursor: pointer;
-  text-decoration: ${(props) =>
-    props.selected
-      ? "underline 1px solid gold"
-      : "underline 1px solid transparent "};
+  text-decoration: none;
 
   color: ${(props) => (props.selected ? "gold" : "var(--text-primary)")};
 
   :hover {
-    text-decoration: underline 1px solid gold;
+    border-bottom: 2px solid gold;
+    padding-bottom: 0.3rem;
     color: gold;
   }
 `;
@@ -200,7 +183,9 @@ const NavbarWrapper = styled.nav`
     display: flex;
     align-items: center;
     list-style-type: none;
-
+    > :last-child {
+      display: ${(props) => (props.mobile ? "block" : "none")};
+    }
     span {
       margin: auto 0.5rem;
     }
@@ -212,7 +197,14 @@ const NavbarWrapper = styled.nav`
   }
 `;
 const Social = styled.img`
-  height: 35px;
+  height: 25px;
+  transition: var(--transition);
+  :hover {
+    filter: drop-shadow(0 0 2px gold);
+    transform: scale(1.1);
+  }
 `;
+
 const Home = styled(Social)``;
+
 export default Navbar;

@@ -15,6 +15,11 @@ const Card = styled.div`
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  transition: var(--transition);
+
+  :hover {
+    ${(props) => !props.noScale && "transform: scale(1.1);"}
+  }
 `;
 export default Card;
 

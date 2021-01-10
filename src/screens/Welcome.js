@@ -26,6 +26,7 @@ const WelcomeWrapper = styled(Container)`
   }
   margin-top: 70px;
   height: 100vh;
+  min-height: 600px;
   justify-content: center;
   background: url(${Background});
   p {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import Card from "../components/Card";
+import Card, { CardContainer } from "../components/Card";
 import Container from "../components/Container";
 import Github from "../assets/logos/github-alt.svg";
 import LinkedIn from "../assets/logos/linkedin.svg";
@@ -11,17 +11,12 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h2>🕊 Contact</h2>
-      <div>
+
+      <CardContainer>
         <Card>
           <a href="mailt:benjamin@weinstock.it">
             <img loading="lazy" src={EMail} alt="Mail" />
             Mail
-          </a>
-        </Card>
-        <Card>
-          <a href="mailt:benjamin@weinstock.it">
-            <img loading="lazy" src={Github} alt="Github" />
-            Github
           </a>
         </Card>
         <Card>
@@ -32,11 +27,17 @@ const Contact = () => {
         </Card>
         <Card>
           <a href="mailt:benjamin@weinstock.it">
+            <img loading="lazy" src={Github} alt="Github" />
+            Github
+          </a>
+        </Card>
+        <Card>
+          <a href="mailt:benjamin@weinstock.it">
             <img loading="lazy" src={LinkedIn} alt="LinkedIn" />
             LinkedIn
           </a>
         </Card>
-      </div>
+      </CardContainer>
     </ContactContainer>
   );
 };
@@ -55,6 +56,7 @@ const ContactContainer = styled(Container)`
     a {
       display: flex;
       flex-direction: column;
+      overflow-wrap: normal;
     }
     img {
       height: 35px;

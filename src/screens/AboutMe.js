@@ -3,8 +3,8 @@ import Container, { TextContainer } from "../components/Container";
 
 const AboutMe = () => {
   return (
-    <Container primary id="aboutme">
-      <h2>🥷🏻 About me</h2>
+    <Container primary id="about">
+      <h2>🥷🏻 About</h2>
       <TextContainer>
         <p>
           Iam Benjamin, born 1989 in Germany. I studied Social Work, but started

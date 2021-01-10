@@ -58,6 +58,7 @@ const Projects = () => {
 };
 
 const Project = styled(Card)`
+  flex: 0 1 15rem;
   position: relative;
   padding: 0;
   width: clamp(330px, 40vw, 600px);

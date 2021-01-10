@@ -9,34 +9,24 @@ import StyledImg from "../assets/logos/styledComponents.png";
 import MongoDB from "../assets/logos/mongoDB.svg";
 
 const Tech = () => {
+  const technologies = [
+    { name: "HTML", src: HTML },
+    { name: "CSS", src: CSS },
+    { name: "Javascript", src: JS },
+    { name: "React", src: ReactImg },
+    { name: "Styled Components", src: StyledImg },
+    { name: "mongoDB", src: MongoDB },
+  ];
   return (
     <TechWrapper primary id="tech">
       <h2>💻 Tech</h2>
       <CardContainer>
-        <TechBox>
-          <TechImg src={HTML} alt="HTML" />
-          <h5>HTML</h5>
-        </TechBox>
-        <TechBox>
-          <TechImg src={CSS} alt="HTML" />
-          <h5>CSS</h5>
-        </TechBox>
-        <TechBox>
-          <TechImg src={JS} alt="HTML" />
-          <h5>Javascript</h5>
-        </TechBox>
-        <TechBox>
-          <TechImg src={ReactImg} alt="HTML" />
-          <h5>React</h5>
-        </TechBox>
-        <TechBox>
-          <TechImg src={StyledImg} alt="HTML" />
-          <h5>Styled Components</h5>
-        </TechBox>
-        <TechBox>
-          <TechImg src={MongoDB} alt="HTML" />
-          <h5>mongoDB</h5>
-        </TechBox>
+        {technologies.map((tech) => (
+          <Card noScale>
+            <TechImg src={tech.src} alt={tech.name} />
+            <h5>{tech.name}</h5>
+          </Card>
+        ))}
       </CardContainer>
     </TechWrapper>
   );
@@ -44,9 +34,9 @@ const Tech = () => {
 
 const TechWrapper = styled(Container)``;
 
-const TechBox = styled(Card)``;
 const TechImg = styled.img`
-  height: 100px;
+  height: 75px;
+  height: clamp(60px, 10vw, 75px);
   margin: 1rem auto;
 `;
 export default Tech;

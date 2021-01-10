@@ -21,10 +21,11 @@ const Download = styled.a`
   background-color: var(--action);
   border-radius: 6px;
   transition: var(--transition);
-  transition: all 1s ease-in-out;
+  transition: var(--transition);
   text-decoration: underline 1px solid transparent;
   &&:hover {
     text-decoration: underline 1px solid gold;
+    transform: scale(1.1);
   }
 `;
 export default Hiring;
