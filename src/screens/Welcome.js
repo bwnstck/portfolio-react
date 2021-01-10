@@ -3,6 +3,7 @@ import styled from "styled-components/macro";
 import Avatar from "../components/Avatar";
 import Container from "../components/Container";
 import GoDown from "../components/GoDown";
+import Goo from "../components/Goo";
 import Background from "../assets/background.svg";
 
 const Welcome = () => {
@@ -12,6 +13,7 @@ const Welcome = () => {
       <p>I design and code beautifully simple things, and I love what I do.</p>
       <Avatar />
       <GoDown />
+      <Goo />
     </WelcomeWrapper>
   );
 };
@@ -21,6 +23,7 @@ const WelcomeWrapper = styled(Container)`
     margin-bottom: 1rem;
   }
   margin-top: 70px;
+  height: 100vh;
   justify-content: center;
   background: url(${Background});
   p {
