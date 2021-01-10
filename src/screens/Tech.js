@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import Card from "../components/Card";
+import Card, { CardContainer } from "../components/Card";
 import Container from "../components/Container";
 import HTML from "../assets/logos/html5.svg";
 import CSS from "../assets/logos/css.svg";
@@ -43,17 +43,6 @@ const Tech = () => {
 };
 
 const TechWrapper = styled(Container)``;
-const CardContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  > * {
-    width: 18rem;
-    margin: auto 1rem 1rem;
-    flex: 0 1 18rem;
-    margin: 5px;
-  }
-`;
 
 const TechBox = styled(Card)``;
 const TechImg = styled.img`

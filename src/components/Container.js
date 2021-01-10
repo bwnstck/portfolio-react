@@ -11,7 +11,6 @@ const Container = styled.div`
   justify-content: space-around;
   text-align: center;
   width: 100%;
-  height: "100%";
   padding: 4rem 0rem;
   background: ${(props) =>
     props.primary ? "var(--primary)" : "var(--secondary)"};
@@ -23,5 +22,11 @@ const Container = styled.div`
 Container.propTypes = {
   primary: PropTypes.bool,
 };
+
+export const TextContainer = styled.div`
+  max-width: 82ch;
+  text-align: left;
+  margin: auto;
+`;
 
 export default Container;

@@ -24,6 +24,7 @@ const Navbar = () => {
 
 const NavbarWrapper = styled.nav`
   position: fixed;
+  z-index: 99;
   top: 0;
   left: 0;
   right: 0;
@@ -44,11 +45,12 @@ const NavbarWrapper = styled.nav`
     align-items: center;
     list-style-type: none;
     li {
-      transition: hover 1s ease-in-out;
+      transition: var(--transition);
+      text-decoration: underline 1px solid transparent;
       margin-right: 1rem;
     }
     li:hover {
-      border-bottom: 1px solid gold;
+      text-decoration: underline 1px solid gold;
     }
   }
   div {

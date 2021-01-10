@@ -1,14 +1,6 @@
-import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 
-const Card = ({ children }) => {
-  Card.propTypes = {
-    children: PropTypes.node,
-  };
-  return <CardWrapper>{children}</CardWrapper>;
-};
-
-const CardWrapper = styled.div`
+const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,3 +17,15 @@ const CardWrapper = styled.div`
   border-radius: 0.25rem;
 `;
 export default Card;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1300px;
+  > * {
+    margin: auto 1rem 1rem;
+    flex: 0 1 18rem;
+    margin: 0.5rem;
+  }
+`;
