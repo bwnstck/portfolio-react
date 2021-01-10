@@ -1,34 +1,132 @@
+import React from "react";
+
+import IconButton from "@material-ui/core/IconButton";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import MoreVertIcon from "@material-ui/icons/ViewList";
+
 import styled from "styled-components/macro";
 import Alien from "../assets/img/invader.png";
 import GithubSrc from "../assets/logos/github-alt.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";
-import React from "react";
+import { useState } from "react";
 
-const Navbar = () => {
-  const menuItems = [
-    { name: "CV", id: "cv" },
-    { name: "Tech", id: "tech" },
-    { name: "Projects", id: "projects" },
-    { name: "About me", id: "aboutme" },
-  ];
+const menuItems = [
+  { name: "CV", id: "cv" },
+  { name: "Tech", id: "tech" },
+  { name: "Projects", id: "projects" },
+  { name: "About me", id: "aboutme" },
+];
+const ITEM_HEIGHT = 48;
+
+const Navbar = ({ active, handleActive }) => {
+  const [showMenu, setShowMenu] = useState(true);
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <NavbarWrapper>
-      <a href="#outerSpace">
+      <a
+        href="#outerSpace"
+        onClick={() => {
+          handleActive(null);
+        }}
+      >
         <Home src={Alien} alt="Invader" />
       </a>
       <ul>
-        {menuItems.map((menuItem) => (
-          <React.Fragment key={menuItem.name}>
-            <li>
-              <a href={`#${menuItem.id}`}>{menuItem.name}</a>
-            </li>
-            <span>•</span>
-          </React.Fragment>
-        ))}
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+        {showMenu && (
+          <>
+            {menuItems.map((menuItem) => (
+              <React.Fragment key={menuItem.name}>
+                <li>
+                  <StyledLink
+                    selected={active === menuItem}
+                    href={`#${menuItem.id}`}
+                    onClick={() => {
+                      handleActive(menuItem);
+                    }}
+                  >
+                    {menuItem.name}
+                  </StyledLink>
+                </li>
+                <span>•</span>
+              </React.Fragment>
+            ))}
+            <StyledLink
+              selected={active === menuItems[-1]}
+              href="#contact"
+              onClick={() => {
+                handleActive(menuItems[-1]);
+              }}
+            >
+              Contact
+            </StyledLink>
+          </>
+        )}
       </ul>
+      <button onClick={() => setShowMenu(!showMenu)}>Toggle</button>
+      <PopupMenu>
+        <IconButton
+          aria-label="more"
+          aria-controls="long-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          <MoreVertIcon />
+        </IconButton>
+        <Menu
+          id="long-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={open}
+          onClose={handleClose}
+          PaperProps={{
+            style: {
+              maxHeight: ITEM_HEIGHT * 4.5,
+              width: "50ch",
+              marginTop: "60px",
+            },
+          }}
+        >
+          {menuItems.map((menuItem) => (
+            <MenuItem key={menuItem.name}>
+              <StyledLink
+                toggleMenu={!showMenu}
+                selected={active === menuItem}
+                href={`#${menuItem.id}`}
+                onClick={(event) => {
+                  handleClose(event);
+                  handleActive(menuItem);
+                }}
+              >
+                {menuItem.name}
+              </StyledLink>
+            </MenuItem>
+          ))}
+          <MenuItem>
+            <StyledLink
+              toggleMenu={!showMenu}
+              selected={active === menuItems[-1]}
+              href="#contact"
+              onClick={() => {
+                handleActive(menuItems[-1]);
+              }}
+            >
+              Contact
+            </StyledLink>
+          </MenuItem>
+        </Menu>
+      </PopupMenu>
       <div>
         <Social src={GithubSrc} alt="Github" />
         <Social src={LinkedInSrc} alt="LinkedIn" />
@@ -36,7 +134,35 @@ const Navbar = () => {
     </NavbarWrapper>
   );
 };
+const PopupMenu = styled.div`
+  button {
+    font-size: 1rem;
+    padding: 0.1rem 0.5rem;
+    /* border-bottom: 1px solid gold; */
+    color: white;
+  }
+`;
+const StyledLink = styled.a`
+  font-size: clamp(1rem, 6vw, 1.4rem);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: ${(props) =>
+    props.selected
+      ? "underline 1px solid gold"
+      : "underline 1px solid transparent "};
 
+  color: ${(props) =>
+    props.selected
+      ? "gold"
+      : props.toggleMenu
+      ? "black"
+      : "var(--text-primary)"};
+
+  :hover {
+    text-decoration: underline 1px solid gold;
+    color: gold;
+  }
+`;
 const NavbarWrapper = styled.nav`
   position: fixed;
   z-index: 99;
@@ -59,18 +185,7 @@ const NavbarWrapper = styled.nav`
     display: flex;
     align-items: center;
     list-style-type: none;
-    a {
-      font-size: clamp(1rem, 6vw, 1.4rem);
-      transition: var(--transition);
-      text-decoration: underline 1px solid transparent;
-      cursor: pointer;
-      color: var(--text-primary);
-    }
 
-    a:hover {
-      text-decoration: underline 1px solid gold;
-      color: gold;
-    }
     span {
       margin: auto 0.5rem;
     }

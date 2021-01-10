@@ -9,14 +9,20 @@ import Tech from "./screens/Tech";
 import Projects from "./screens/Projects";
 import AboutMe from "./screens/AboutMe";
 import Contact from "./screens/Contact";
+import { useState } from "react";
 
 function App() {
+  const [active, setActive] = useState(null);
+
+  const handleActive = (item) => {
+    setActive(item);
+  };
   return (
     <div>
       <GlobalStyle />
-      <Navbar />
+      <Navbar handleActive={handleActive} active={active} />
       <Wrapper>
-        <Welcome />
+        <Welcome handleActive={handleActive} />
         <Hiring />
         <Tech />
         <Projects />
