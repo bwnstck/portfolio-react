@@ -1,14 +1,6 @@
-import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 
-const Card = ({ children }) => {
-  Card.propTypes = {
-    children: PropTypes.node,
-  };
-  return <CardWrapper>{children}</CardWrapper>;
-};
-
-const CardWrapper = styled.div`
+const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
