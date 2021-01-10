@@ -25,8 +25,14 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  html{
+    scroll-behavior: smooth;
+    width: 100%;
+    min-width: 100vw;
+  }
   #root {
     min-height: 100vh;
+    height: 100%;
   }
 
   body {
@@ -47,12 +53,12 @@ const GlobalStyle = createGlobalStyle`
   }
   h1,
   h2 {
-    font-size: calc(1.5rem + 2.7vw);
+    font-size: clamp(1.5rem,calc(1.5rem + 2.5vw),4rem);
     font-weight: 300;
     line-height: 1.2;
   }
   h4 {
-    font-size: calc(1.5rem + 1.25vw);
+    font-size: clamp(1rem,calc(1.5rem + 1.25vw),2rem);
   }
   h5 {
     font-size: 1.25rem;

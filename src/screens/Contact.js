@@ -1,8 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Card from "../components/Card";
 import Container from "../components/Container";
-import Mail from "../assets/logos/github-alt.svg";
 import Github from "../assets/logos/github-alt.svg";
 import LinkedIn from "../assets/logos/linkedin.svg";
 import Letter from "../assets/logos/letter.svg";
@@ -10,7 +9,7 @@ import EMail from "../assets/logos/mail.svg";
 
 const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <h2>🕊 Contact</h2>
       <div>
         <Card>
@@ -46,8 +45,12 @@ const ContactContainer = styled(Container)`
   min-height: 400px;
   div {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
     * {
-      margin: auto 1rem;
+      max-width: 75px;
+      margin: 0.5rem;
     }
     a {
       display: flex;

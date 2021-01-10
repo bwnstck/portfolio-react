@@ -10,7 +10,7 @@ import MongoDB from "../assets/logos/mongoDB.svg";
 
 const Tech = () => {
   return (
-    <TechWrapper primary>
+    <TechWrapper primary id="tech">
       <h2>💻 Tech</h2>
       <CardContainer>
         <TechBox>

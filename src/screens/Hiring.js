@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Container from "../components/Container";
 
 const Hiring = () => {
   return (
-    <Container>
+    <Container id="cv">
       <h2>👩‍🎤 hiring?</h2>
       <p>Get my CV!</p>
       <Download href="./assets/BWeinstockCV2020.pdf" target="_blank">

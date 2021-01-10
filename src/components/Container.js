@@ -11,12 +11,14 @@ const Container = styled.div`
   justify-content: space-around;
   text-align: center;
   width: 100%;
+  ${(props) => props.fullHeight && "min-height: 100vh;"};
   padding: 4rem 0rem;
   background: ${(props) =>
     props.primary ? "var(--primary)" : "var(--secondary)"};
 
   color: ${(props) =>
     props.primary ? "var(--text-primary)" : "var(--text-secondary)"};
+  scroll-margin-top: 70px;
 `;
 
 Container.propTypes = {
@@ -25,8 +27,8 @@ Container.propTypes = {
 
 export const TextContainer = styled.div`
   max-width: 82ch;
-  text-align: left;
-  margin: auto;
+  padding: 0 2rem;
+  text-align: center;
 `;
 
 export default Container;

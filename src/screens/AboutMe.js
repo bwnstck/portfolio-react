@@ -3,7 +3,7 @@ import Container, { TextContainer } from "../components/Container";
 
 const AboutMe = () => {
   return (
-    <Container primary>
+    <Container primary id="aboutme">
       <h2>🥷🏻 About me</h2>
       <TextContainer>
         <p>

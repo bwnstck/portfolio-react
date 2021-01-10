@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Card, { CardContainer } from "../components/Card";
 import Container from "../components/Container";
 import DispoDisco from "../assets/dispodisco.png";
@@ -9,7 +9,7 @@ import Vulvemory from "../assets/vulvemory.png";
 
 const Projects = () => {
   return (
-    <Container>
+    <Container id="projects" fullHeight>
       <h2>🕹 Recent Projects</h2>
       <CardContainer>
         <StyledLink href="/#" target="_blank">
@@ -60,7 +60,8 @@ const Projects = () => {
 const Project = styled(Card)`
   position: relative;
   padding: 0;
-  width: clamp(150px, 40vw, 600px);
+  width: clamp(330px, 40vw, 600px);
+  margin: auto;
   img {
     width: 100%;
     height: 100%;

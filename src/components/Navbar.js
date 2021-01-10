@@ -2,17 +2,32 @@ import styled from "styled-components/macro";
 import Alien from "../assets/img/invader.png";
 import GithubSrc from "../assets/logos/github-alt.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";
+import React from "react";
 
 const Navbar = () => {
+  const menuItems = [
+    { name: "CV", id: "cv" },
+    { name: "Tech", id: "tech" },
+    { name: "Projects", id: "projects" },
+    { name: "About me", id: "aboutme" },
+  ];
   return (
     <NavbarWrapper>
-      <Home src={Alien} alt="Invader" />
+      <a href="#outerSpace">
+        <Home src={Alien} alt="Invader" />
+      </a>
       <ul>
-        <li>CV</li>
-        <li>Tech</li>
-        <li>Projects</li>
-        <li>About me</li>
-        <li>Contact</li>
+        {menuItems.map((menuItem) => (
+          <React.Fragment key={menuItem.name}>
+            <li>
+              <a href={`#${menuItem.id}`}>{menuItem.name}</a>
+            </li>
+            <span>•</span>
+          </React.Fragment>
+        ))}
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
       <div>
         <Social src={GithubSrc} alt="Github" />
@@ -28,7 +43,7 @@ const NavbarWrapper = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
@@ -44,13 +59,20 @@ const NavbarWrapper = styled.nav`
     display: flex;
     align-items: center;
     list-style-type: none;
-    li {
+    a {
+      font-size: clamp(1rem, 6vw, 1.4rem);
       transition: var(--transition);
       text-decoration: underline 1px solid transparent;
-      margin-right: 1rem;
+      cursor: pointer;
+      color: var(--text-primary);
     }
-    li:hover {
+
+    a:hover {
       text-decoration: underline 1px solid gold;
+      color: gold;
+    }
+    span {
+      margin: auto 0.5rem;
     }
   }
   div {
