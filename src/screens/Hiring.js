@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Container from "../components/Container";
-
+import CV from "../assets/BWeinstockCV2020.pdf";
 const Hiring = () => {
   return (
     <Container id="cv">
       <h2>👩‍🎤 hiring?</h2>
       <p>Get my CV!</p>
-      <Download href="./assets/BWeinstockCV2020.pdf" target="_blank">
+      <Download href={CV} target="_blank">
         Download
       </Download>
     </Container>

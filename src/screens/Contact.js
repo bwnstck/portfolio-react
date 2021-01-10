@@ -14,25 +14,25 @@ const Contact = () => {
       <div>
         <Card>
           <a href="mailt:benjamin@weinstock.it">
-            <img src={EMail} alt="Mail" />
+            <img loading="lazy" src={EMail} alt="Mail" />
             Mail
           </a>
         </Card>
         <Card>
           <a href="mailt:benjamin@weinstock.it">
-            <img src={Github} alt="Github" />
+            <img loading="lazy" src={Github} alt="Github" />
             Github
           </a>
         </Card>
         <Card>
           <a href="mailt:benjamin@weinstock.it">
-            <img src={Letter} alt="Letter" />
+            <img loading="lazy" src={Letter} alt="Letter" />
             Letter
           </a>
         </Card>
         <Card>
           <a href="mailt:benjamin@weinstock.it">
-            <img src={LinkedIn} alt="LinkedIn" />
+            <img loading="lazy" src={LinkedIn} alt="LinkedIn" />
             LinkedIn
           </a>
         </Card>
