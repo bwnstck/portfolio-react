@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import IconButton from "@material-ui/core/IconButton";
 import Menu from "@material-ui/core/Menu";
@@ -10,6 +10,7 @@ import Alien from "../assets/img/invader.png";
 import GithubSrc from "../assets/logos/github-alt.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";
 import { useState } from "react";
+import { isMobile } from "../screens/lib/responsiveHelpers";
 
 const menuItems = [
   { name: "CV", id: "cv" },
@@ -20,10 +21,17 @@ const menuItems = [
 const ITEM_HEIGHT = 48;
 
 const Navbar = ({ active, handleActive }) => {
-  const [showMenu, setShowMenu] = useState(true);
-
+  const [showMenu, setShowMenu] = useState(!isMobile());
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  window.addEventListener("resize", function () {
+    if (isMobile()) {
+      setShowMenu(false);
+    } else {
+      setShowMenu(true);
+    }
+  });
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -44,7 +52,7 @@ const Navbar = ({ active, handleActive }) => {
         <Home src={Alien} alt="Invader" />
       </a>
       <ul>
-        {showMenu && (
+        {showMenu ? (
           <>
             {menuItems.map((menuItem) => (
               <React.Fragment key={menuItem.name}>
@@ -72,61 +80,70 @@ const Navbar = ({ active, handleActive }) => {
               Contact
             </StyledLink>
           </>
-        )}
-      </ul>
-      <button onClick={() => setShowMenu(!showMenu)}>Toggle</button>
-      <PopupMenu>
-        <IconButton
-          aria-label="more"
-          aria-controls="long-menu"
-          aria-haspopup="true"
-          onClick={handleClick}
-        >
-          <MoreVertIcon />
-        </IconButton>
-        <Menu
-          id="long-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={open}
-          onClose={handleClose}
-          PaperProps={{
-            style: {
-              maxHeight: ITEM_HEIGHT * 4.5,
-              width: "50ch",
-              marginTop: "60px",
-            },
-          }}
-        >
-          {menuItems.map((menuItem) => (
-            <MenuItem key={menuItem.name}>
-              <StyledLink
-                toggleMenu={!showMenu}
-                selected={active === menuItem}
-                href={`#${menuItem.id}`}
-                onClick={(event) => {
-                  handleClose(event);
-                  handleActive(menuItem);
-                }}
-              >
-                {menuItem.name}
-              </StyledLink>
-            </MenuItem>
-          ))}
-          <MenuItem>
-            <StyledLink
-              toggleMenu={!showMenu}
-              selected={active === menuItems[-1]}
-              href="#contact"
-              onClick={() => {
-                handleActive(menuItems[-1]);
+        ) : (
+          <PopupMenu>
+            <IconButton
+              aria-label="more"
+              aria-controls="long-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              <MoreVertIcon />
+            </IconButton>
+            <Menu
+              id="long-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+              PaperProps={{
+                style: {
+                  maxHeight: ITEM_HEIGHT * menuItems.length,
+                  width: "50ch",
+                  margin: "60px auto auto",
+                  background: "var(--text-secondary)",
+                },
               }}
             >
-              Contact
-            </StyledLink>
-          </MenuItem>
-        </Menu>
-      </PopupMenu>
+              {menuItems.map((menuItem) => (
+                <MenuItem key={menuItem.name}>
+                  <StyledLink
+                    toggleMenu={!showMenu}
+                    selected={active === menuItem}
+                    href={`#${menuItem.id}`}
+                    onClick={(event) => {
+                      handleClose(event);
+                      handleActive(menuItem);
+                    }}
+                  >
+                    {menuItem.name}
+                  </StyledLink>
+                </MenuItem>
+              ))}
+              <MenuItem>
+                <StyledLink
+                  toggleMenu={!showMenu}
+                  selected={active === menuItems[-1]}
+                  href="#contact"
+                  onClick={() => {
+                    handleActive(menuItems[-1]);
+                  }}
+                >
+                  Contact
+                </StyledLink>
+              </MenuItem>
+            </Menu>
+          </PopupMenu>
+        )}
+      </ul>
       <div>
         <Social src={GithubSrc} alt="Github" />
         <Social src={LinkedInSrc} alt="LinkedIn" />
@@ -136,13 +153,16 @@ const Navbar = ({ active, handleActive }) => {
 };
 const PopupMenu = styled.div`
   button {
-    font-size: 1rem;
-    padding: 0.1rem 0.5rem;
-    /* border-bottom: 1px solid gold; */
+    font-size: 2rem;
+    /* padding: 0.1rem 0.5rem; */
     color: white;
+    svg {
+      font-size: 2.25rem;
+    }
   }
 `;
 const StyledLink = styled.a`
+  margin: auto;
   font-size: clamp(1rem, 6vw, 1.4rem);
   transition: var(--transition);
   cursor: pointer;
@@ -151,12 +171,7 @@ const StyledLink = styled.a`
       ? "underline 1px solid gold"
       : "underline 1px solid transparent "};
 
-  color: ${(props) =>
-    props.selected
-      ? "gold"
-      : props.toggleMenu
-      ? "black"
-      : "var(--text-primary)"};
+  color: ${(props) => (props.selected ? "gold" : "var(--text-primary)")};
 
   :hover {
     text-decoration: underline 1px solid gold;
@@ -171,7 +186,7 @@ const NavbarWrapper = styled.nav`
   right: 0;
   width: 100vw;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-around;
   padding: 1rem;
   min-height: 70px;
