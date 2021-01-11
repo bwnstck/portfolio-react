@@ -10,11 +10,10 @@ const Welcome = () => {
     <WelcomeWrapper primary id="outerSpace">
       <TextContainer>
         <h1>Benjamin Weinstock</h1>
-        <p>
-          I design and code beautifully simple things, and I love what I do.
-        </p>
+        <p>🌈 Web Developer, Tinkerer and Solutioner 🖖 </p>
       </TextContainer>
       <Avatar />
+      <p>... always up for an adventure! 🥷🏻</p>
       <GoDown />
     </WelcomeWrapper>
   );
