@@ -49,10 +49,11 @@ const Projects = () => {
         {projects.map((project) => (
           <Project key={project.title} scaleTo={1.02}>
             <img loading="lazy" src={project.src} alt={project.title} />
+            <ShaderLayer />
             <div>
               <h4>{project.title}</h4>
+              <p>{project.sub}</p>
               <InfoContainer>
-                <p>{project.sub}</p>
                 <span>{project.type}</span>
               </InfoContainer>
               <LinkContainer>
@@ -70,16 +71,20 @@ const Projects = () => {
     </Container>
   );
 };
-
+const ShaderLayer = styled.div`
+  transition: var(--transition);
+  background-color: rgba(0, 0, 0, 0.5);
+`;
 const Project = styled(Card)`
   flex: 0 1 600px;
   margin: 1rem;
-  transition: var(--transition);
-
   position: relative;
   padding: 0;
   width: clamp(330px, 40vw, 600px);
   &&:hover {
+    > :nth-child(2) {
+      background-color: rgba(0, 0, 0, 0);
+    }
     img {
       filter: blur(4px);
     }
@@ -92,7 +97,7 @@ const Project = styled(Card)`
     width: 100%;
     height: 100%;
     vertical-align: middle;
-    filter: blur(5px) grayscale(0.75);
+    filter: blur(5px);
   }
 
   > div {
