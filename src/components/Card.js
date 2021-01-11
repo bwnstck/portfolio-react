@@ -18,10 +18,9 @@ const Card = styled.div`
   transition: var(--transition);
 
   :hover {
-    ${(props) => !props.noScale && "transform: scale(1.1);"}
+    transform: ${(props) => `scale(${props.scaleTo ? props.scaleTo : "1.1"})`};
   }
 `;
-export default Card;
 
 export const CardContainer = styled.div`
   display: flex;
@@ -34,3 +33,5 @@ export const CardContainer = styled.div`
     margin: 0.5rem;
   }
 `;
+
+export default Card;

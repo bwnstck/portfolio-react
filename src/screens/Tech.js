@@ -22,7 +22,7 @@ const Tech = () => {
       <h2>💻 Tech</h2>
       <CardContainer>
         {technologies.map((tech) => (
-          <Card noScale>
+          <Card key={tech.name} scaleTo={1}>
             <TechImg src={tech.src} alt={tech.name} />
             <h5>{tech.name}</h5>
           </Card>

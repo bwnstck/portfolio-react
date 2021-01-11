@@ -8,68 +8,94 @@ import RealDecide from "../assets/realdecide.png";
 import Vulvemory from "../assets/vulvemory.png";
 
 const Projects = () => {
+  const projects = [
+    {
+      title: "= DispoDisco =-",
+      sub: "App for bike messengers",
+      type: "Capstone Project @neueFische",
+      depl: "https://dispodisco.herokuapp.com",
+      github: "https://github.com/DiscoDevs/DispoDisco",
+      src: DispoDisco,
+    },
+    {
+      title: "= GoBang =-",
+      sub: "Digital version of the small 'Go'-Game",
+      type: "Hobby Project 2020",
+      depl: "https://playgobang.vercel.app",
+      github: "https://github.com/bwnstck/gobang",
+      src: GoBang,
+    },
+    {
+      title: "= realDecide =-",
+      sub: "localStorage Versionof wheeldecide",
+      type: "Hobby Project 2020",
+      depl: "https://realdecide.vercel.app",
+      github: "https://github.com/bwnstck/realdecide",
+      src: RealDecide,
+    },
+    {
+      title: "= Vulvemory =-",
+      sub: "a simple memory Game",
+      type: "Hobby Project 2020",
+      depl: "https://vulvemory.vercel.app",
+      github: "https://github.com/verdruckt/vulvemory",
+      src: Vulvemory,
+    },
+  ];
   return (
     <Container id="projects" fullHeight>
-      <h2>🕹 Recent Projects</h2>
+      <h2>🕹 Projects</h2>
       <CardContainer>
-        <StyledLink href="/#" target="_blank">
-          <Project>
-            <img loading="lazy" src={DispoDisco} alt="GoBang" />
+        {projects.map((project) => (
+          <Project key={project.title} scaleTo={1.02}>
+            <img loading="lazy" src={project.src} alt={project.title} />
             <div>
-              <h4>-= DispoDisco =-</h4>
-              <p>Digital version of the "Go"-Game</p>
-              <p>Hobby Project 2020</p>
+              <h4>{project.title}</h4>
+              <InfoContainer>
+                <p>{project.sub}</p>
+                <span>{project.type}</span>
+              </InfoContainer>
+              <LinkContainer>
+                <a href={project.depl} target="_blank" rel="noreferrer">
+                  Github
+                </a>
+                <a href={project.depl} target="_blank" rel="noreferrer" d>
+                  Deployment
+                </a>
+              </LinkContainer>
             </div>
           </Project>
-        </StyledLink>
-        <StyledLink href="/#" target="_blank">
-          <Project>
-            <img loading="lazy" src={GoBang} alt="GoBang" />
-            <div>
-              <h4>-= GoBang =-</h4>
-              <p>Digital version of the "Go"-Game</p>
-              <p>Hobby Project 2020</p>
-            </div>
-          </Project>
-        </StyledLink>
-        <StyledLink href="/#" target="_blank">
-          <Project>
-            <img loading="lazy" src={RealDecide} alt="GoBang" />
-            <div>
-              <h4>-= RealDecide =-</h4>
-              <p>Digital version of the "Go"-Game</p>
-              <p>Hobby Project 2020</p>
-            </div>
-          </Project>
-        </StyledLink>
-        <StyledLink href="/#" target="_blank">
-          <Project>
-            <img loading="lazy" src={Vulvemory} alt="GoBang" />
-            <div>
-              <h4>-= Vulvemory =-</h4>
-              <p>Digital version of the "Go"-Game</p>
-              <p>Hobby Project 2020</p>
-            </div>
-          </Project>
-        </StyledLink>
+        ))}
       </CardContainer>
     </Container>
   );
 };
 
 const Project = styled(Card)`
-  flex: 0 1 15rem;
+  flex: 0 1 600px;
+  margin: 1rem;
+  transition: var(--transition);
+
   position: relative;
   padding: 0;
   width: clamp(330px, 40vw, 600px);
-  margin: auto;
+  &&:hover {
+    img {
+      filter: blur(4px);
+    }
+    h4 {
+      transform: scale(1.1);
+    }
+  }
+
   img {
     width: 100%;
     height: 100%;
     vertical-align: middle;
-    filter: blur(5px);
+    filter: blur(5px) grayscale(0.75);
   }
-  div {
+
+  > div {
     position: absolute;
     top: 0;
     right: 0;
@@ -81,24 +107,24 @@ const Project = styled(Card)`
     justify-content: center;
     padding: 1rem;
     border-radius: calc(0.25rem - 1px);
+    filter: drop-shadow(0 0 6px black);
     h4 {
       text-shadow: 0 0 #f4166e;
       transition: all 0.5s ease-in-out;
     }
   }
 `;
-const StyledLink = styled.a`
-  flex: 0 1 25rem;
-  margin: 1rem;
-  color: #c77da2;
-  text-decoration: none;
-  transition: all 0.5s ease-in;
-  &&:hover {
-    transform: scale(1.05);
-    text-decoration: none;
-    h4 {
-      text-shadow: 0 3px var(--action);
-    }
+
+const InfoContainer = styled.div`
+  position: absolute;
+  bottom: 20%;
+`;
+
+const LinkContainer = styled.div`
+  position: absolute;
+  bottom: 1.5rem;
+  > :first-child {
+    margin-right: 1rem;
   }
 `;
 export default Projects;

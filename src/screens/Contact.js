@@ -30,13 +30,17 @@ const Contact = () => {
           </a>
         </Card>
         <Card>
-          <a href="https://github.com/bwnstck">
+          <a href="https://github.com/bwnstck" target="_blank" rel="noreferrer">
             <img loading="lazy" src={Github} alt="Github" />
             Github
           </a>
         </Card>
         <Card>
-          <a href="https://www.linkedin.com/in/bweinstock/">
+          <a
+            href="https://www.linkedin.com/in/bweinstock/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img loading="lazy" src={LinkedIn} alt="LinkedIn" />
             LinkedIn
           </a>

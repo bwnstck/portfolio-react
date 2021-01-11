@@ -8,7 +8,13 @@ const Footer = () => {
       </p>
       <p>
         Found an error? Open an{" "}
-        <a href="https://github.com/bwnstck/portfolio-react/issues">Issue!</a>
+        <a
+          href="https://github.com/bwnstck/portfolio-react/issues"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Issue!
+        </a>
       </p>
     </FooterWrapper>
   );

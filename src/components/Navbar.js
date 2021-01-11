@@ -127,10 +127,14 @@ const Navbar = ({ active, handleActive }) => {
         )}
       </ul>
       <div>
-        <a href="https://github.com/bwnstck">
+        <a href="https://github.com/bwnstck" target="_blank" rel="noreferrer">
           <Social src={GithubSrc} alt="Github" />
         </a>
-        <a href="https://www.linkedin.com/in/bweinstock/">
+        <a
+          href="https://www.linkedin.com/in/bweinstock/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Social src={LinkedInSrc} alt="LinkedIn" />
         </a>
       </div>

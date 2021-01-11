@@ -10,7 +10,7 @@ const Welcome = () => {
     <WelcomeWrapper primary id="outerSpace">
       <TextContainer>
         <h1>Benjamin Weinstock</h1>
-        <p>🌈 Web Developer, Tinkerer and Solutioner 🖖 </p>
+        <p>🌈 Web Developer, Tinkerer, Solutioner 🖖 </p>
       </TextContainer>
       <Avatar />
       <p>... always up for an adventure! 🥷🏻</p>
