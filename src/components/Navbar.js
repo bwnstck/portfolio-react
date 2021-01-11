@@ -130,7 +130,7 @@ const Navbar = ({ active, handleActive }) => {
         <a href="https://github.com/bwnstck">
           <Social src={GithubSrc} alt="Github" />
         </a>
-        <a href="https://www.linkedin.com/bweinstock/">
+        <a href="https://www.linkedin.com/in/bweinstock/">
           <Social src={LinkedInSrc} alt="LinkedIn" />
         </a>
       </div>

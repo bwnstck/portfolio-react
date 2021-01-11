@@ -14,25 +14,29 @@ const Contact = () => {
 
       <CardContainer>
         <Card>
-          <a href="mailt:benjamin@weinstock.it">
+          <a href="mailto:benjamin@weinstock.it">
             <img loading="lazy" src={EMail} alt="Mail" />
             Mail
           </a>
         </Card>
-        <Card>
-          <a href="mailt:benjamin@weinstock.it">
+        <Card
+          onClick={() => {
+            alert("Benjamin Weinstock, Louis-Ferdinand-Str. 7, 55733 Cologne");
+          }}
+        >
+          <a href="#contact">
             <img loading="lazy" src={Letter} alt="Letter" />
             Letter
           </a>
         </Card>
         <Card>
-          <a href="mailt:benjamin@weinstock.it">
+          <a href="https://github.com/bwnstck">
             <img loading="lazy" src={Github} alt="Github" />
             Github
           </a>
         </Card>
         <Card>
-          <a href="mailt:benjamin@weinstock.it">
+          <a href="https://www.linkedin.com/in/bweinstock/">
             <img loading="lazy" src={LinkedIn} alt="LinkedIn" />
             LinkedIn
           </a>
