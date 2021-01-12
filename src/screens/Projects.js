@@ -12,14 +12,16 @@ const Projects = () => {
     {
       title: "= DispoDisco =-",
       sub: "App for bike messengers",
-      type: "Capstone Project @neueFische",
+      type: "Capstone Project 2020 ",
+      link: "https://neuefische.de",
+      linkText: "@neuefische",
       depl: "https://dispodisco.herokuapp.com",
       github: "https://github.com/DiscoDevs/DispoDisco",
       src: DispoDisco,
     },
     {
       title: "= GoBang =-",
-      sub: "Digital version of the small 'Go'-Game",
+      sub: "digital version of the small 'Go'-Game",
       type: "Hobby Project 2020",
       depl: "https://playgobang.vercel.app",
       github: "https://github.com/bwnstck/gobang",
@@ -27,7 +29,7 @@ const Projects = () => {
     },
     {
       title: "= realDecide =-",
-      sub: "localStorage Versionof wheeldecide",
+      sub: "localStorage Version of wheeldecide",
       type: "Hobby Project 2020",
       depl: "https://realdecide.vercel.app",
       github: "https://github.com/bwnstck/realdecide",
@@ -55,6 +57,7 @@ const Projects = () => {
               <p>{project.sub}</p>
               <InfoContainer>
                 <span>{project.type}</span>
+                {project.link && <a href={project.link}>{project.linkText}</a>}
               </InfoContainer>
               <LinkContainer>
                 <a href={project.github} target="_blank" rel="noreferrer">
