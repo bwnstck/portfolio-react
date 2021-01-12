@@ -57,7 +57,7 @@ const Projects = () => {
                 <span>{project.type}</span>
               </InfoContainer>
               <LinkContainer>
-                <a href={project.depl} target="_blank" rel="noreferrer">
+                <a href={project.github} target="_blank" rel="noreferrer">
                   Github
                 </a>
                 <a href={project.depl} target="_blank" rel="noreferrer" d>

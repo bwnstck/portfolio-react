@@ -8,6 +8,7 @@ import MoreVertIcon from "@material-ui/icons/ViewList";
 import styled from "styled-components/macro";
 import Alien from "../assets/img/invader.png";
 import GithubSrc from "../assets/logos/github-alt.svg";
+import NeueFische from "../assets/logos/neueFische.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";
 import { useState } from "react";
 import { isMobile } from "../screens/lib/responsiveHelpers";
@@ -136,6 +137,13 @@ const Navbar = ({ active, handleActive }) => {
           rel="noreferrer"
         >
           <Social src={LinkedInSrc} alt="LinkedIn" />
+        </a>
+        <a
+          href="https://talents.neuefische.com/student/bb798f02-f7b7-402a-beaf-c15f1e5cfd80"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Social src={NeueFische} alt="neue Fische Portfolio" />
         </a>
       </div>
     </NavbarWrapper>
