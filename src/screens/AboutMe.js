@@ -7,8 +7,8 @@ const AboutMe = () => {
       <h2>🥷🏻 About</h2>
       <TextContainer>
         <p>
-          Iam Benjamin, born 1989 in Germany. I studied Social Work, but started
-          working as an Macintosh IT-Consultant in 2012.
+          I'am Benjamin, born 1989 in Germany. I studied Social Work, but
+          started working as an Macintosh IT-Consultant in 2012.
         </p>
         <p>Once a week I used to ride as a bike messenger for several years.</p>
         <p>
