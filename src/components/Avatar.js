@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import AvatarPic from "../assets/img/avatar.svg";
+import AvatarPic from "../assets/avatar.svg";
 
 const Avatar = () => {
   return <AvatarWrapper src={AvatarPic} alt="Avatar" />;
