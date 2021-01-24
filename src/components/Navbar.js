@@ -6,19 +6,26 @@ import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/ViewList";
 
 import styled from "styled-components/macro";
-import Alien from "../assets/img/invader.png";
 import GithubSrc from "../assets/logos/github-alt.svg";
 import NeueFische from "../assets/logos/neueFische.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";
 import { useState } from "react";
 import { isMobile } from "../screens/lib/responsiveHelpers";
+import {
+  Computer,
+  Dove,
+  Joystick,
+  Ninja,
+  Superhero,
+  Invader,
+} from "../assets/emojis";
 
 const menuItems = [
-  { name: "CV", id: "cv", img: "👩‍🎤" },
-  { name: "Tech", id: "tech", img: "💻" },
-  { name: "Projects", id: "projects", img: "🕹" },
-  { name: "About", id: "about", img: "🥷🏻" },
-  { name: "Contact", id: "contact", img: "🕊" },
+  { name: "CV", id: "cv", img: Superhero },
+  { name: "Tech", id: "tech", img: Computer },
+  { name: "Projects", id: "projects", img: Joystick },
+  { name: "About", id: "about", img: Ninja },
+  { name: "Contact", id: "contact", img: Dove },
 ];
 const ITEM_HEIGHT = 48;
 
@@ -52,7 +59,7 @@ const Navbar = ({ active, handleActive }) => {
           handleActive(null);
         }}
       >
-        <Home src={Alien} alt="Invader" />
+        <Home src={Invader} alt="Invader" />
       </a>
       <ul>
         {showMenu ? (
@@ -67,7 +74,7 @@ const Navbar = ({ active, handleActive }) => {
                       handleActive(menuItem);
                     }}
                   >
-                    {menuItem.img}
+                    <img src={menuItem.img} alt={menuItem.name} />
                     {menuItem.name}
                   </StyledLink>
                 </li>
@@ -119,7 +126,8 @@ const Navbar = ({ active, handleActive }) => {
                       handleActive(menuItem);
                     }}
                   >
-                    {menuItem.img} {menuItem.name}
+                    <img src={menuItem.img} alt={menuItem.name} />{" "}
+                    {menuItem.name}
                   </StyledLink>
                 </MenuItem>
               ))}
@@ -171,6 +179,10 @@ const StyledLink = styled.a`
     border-bottom: 2px solid gold;
     padding-bottom: 0.3rem;
     color: gold;
+  }
+  img {
+    height: 20px;
+    height: clamp(0.8rem, 6vw, 1.4rem);
   }
 `;
 const NavbarWrapper = styled.nav`

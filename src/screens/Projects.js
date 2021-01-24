@@ -6,6 +6,8 @@ import DispoDisco from "../assets/dispodisco.png";
 import GoBang from "../assets/playgobang.png";
 import RealDecide from "../assets/realdecide.png";
 import Vulvemory from "../assets/vulvemory.png";
+import HeaderImg from "../components/HeaderImg";
+import { Joystick } from "../assets/emojis";
 
 const Projects = () => {
   const projects = [
@@ -46,7 +48,9 @@ const Projects = () => {
   ];
   return (
     <Container id="projects" fullHeight>
-      <h2>🕹 Projects</h2>
+      <h2>
+        <HeaderImg src={Joystick} alt="Joystick" /> Projects
+      </h2>
       <CardContainer>
         {projects.map((project) => (
           <Project key={project.title} scaleTo={1.02}>

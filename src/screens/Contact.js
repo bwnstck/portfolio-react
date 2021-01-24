@@ -6,11 +6,15 @@ import Github from "../assets/logos/github-alt.svg";
 import LinkedIn from "../assets/logos/linkedin.svg";
 import Letter from "../assets/logos/letter.svg";
 import EMail from "../assets/logos/mail.svg";
+import HeaderImg from "../components/HeaderImg";
+import { Dove } from "../assets/emojis";
 
 const Contact = () => {
   return (
     <ContactContainer id="contact">
-      <h2>🕊 Contact</h2>
+      <h2>
+        <HeaderImg src={Dove} alt="Dove" /> Contact
+      </h2>
 
       <CardContainer>
         <Card>

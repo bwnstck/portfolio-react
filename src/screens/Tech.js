@@ -7,6 +7,9 @@ import JS from "../assets/logos/js.svg";
 import ReactImg from "../assets/logos/react.svg";
 import StyledImg from "../assets/logos/styledComponents.png";
 import MongoDB from "../assets/logos/mongoDB.svg";
+import HeaderImg from "../components/HeaderImg";
+import { Computer } from "../assets/emojis";
+import GIT from "../assets/logos/git.png";
 
 const Tech = () => {
   const technologies = [
@@ -16,10 +19,14 @@ const Tech = () => {
     { name: "React", src: ReactImg },
     { name: "Styled Components", src: StyledImg },
     { name: "mongoDB", src: MongoDB },
+    { name: "git workflow", src: GIT },
   ];
   return (
     <TechWrapper primary id="tech">
-      <h2>💻 Tech</h2>
+      <h2>
+        <HeaderImg src={Computer} alt="you are" />
+        Tech
+      </h2>
       <CardContainer>
         {technologies.map((tech) => (
           <Card key={tech.name} scaleTo={1}>

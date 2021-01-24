@@ -2,10 +2,15 @@ import React from "react";
 import styled from "styled-components/macro";
 import Container from "../components/Container";
 import CV from "../assets/BWeinstockCV2020.pdf";
+import HeaderImg from "../components/HeaderImg";
+import { Superhero } from "../assets/emojis";
 const Hiring = () => {
   return (
     <Container id="cv">
-      <h2>👩‍🎤 hiring?</h2>
+      <h2>
+        <HeaderImg src={Superhero} alt="you are" />
+         hiring?
+      </h2>
       <p>Get my CV!</p>
       <Download href={CV} target="_blank">
         Download

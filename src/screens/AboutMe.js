@@ -1,10 +1,15 @@
 import React from "react";
+import { Ninja } from "../assets/emojis";
 import Container, { TextContainer } from "../components/Container";
+import HeaderImg from "../components/HeaderImg";
 
 const AboutMe = () => {
   return (
     <Container primary id="about">
-      <h2>🥷🏻 About</h2>
+      <h2>
+        {" "}
+        <HeaderImg src={Ninja} alt="Ninja" /> About
+      </h2>
       <TextContainer>
         <p>
           I'am Benjamin, born 1989 in Germany. I studied Social Work, but
