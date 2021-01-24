@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: space-around;
   text-align: center;
   width: 100%;
-  ${(props) => props.fullHeight && "min-height: 100vh;"};
+  min-height: ${(props) => (props.fullHeight ? "100vh" : "400px")};
   padding: 4rem 0rem;
   background: ${(props) =>
     props.primary ? "var(--primary)" : "var(--secondary)"};

@@ -11,10 +11,12 @@ const Hiring = () => {
         <HeaderImg src={Superhero} alt="you are" />
          hiring?
       </h2>
-      <p>Get my CV!</p>
       <Download href={CV} target="_blank">
-        Download
+        Get my CV!
       </Download>
+      <p>
+        and write me an <a href="#contact">email</a>
+      </p>
     </Container>
   );
 };
