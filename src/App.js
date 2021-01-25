@@ -15,12 +15,7 @@ import Contact from "./screens/Contact";
 import { isInViewPort } from "./screens/lib/responsiveHelpers";
 
 function App() {
-  let welcome;
-  let cv;
-  let tech;
-  let projects;
-  let about;
-  let contact;
+  let welcome, cv, tech, projects, about, contact;
 
   const [active, setActive] = useState(null);
 
