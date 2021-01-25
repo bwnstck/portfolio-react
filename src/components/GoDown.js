@@ -3,11 +3,9 @@ import styled from "styled-components/macro";
 import DownArrow from "../assets/goDown.svg";
 const GoDown = () => {
   return (
-    <>
-      <a href="#cv">
-        <Down src={DownArrow} alt="Go Down" />
-      </a>
-    </>
+    <a href="#cv">
+      <Down src={DownArrow} alt="Go Down" />
+    </a>
   );
 };
 const Down = styled.img`

@@ -54,7 +54,7 @@ const Navbar = ({ active, handleActive }) => {
   return (
     <NavbarWrapper mobile={!showMenu}>
       <a
-        href="#outerSpace"
+        href="#welcome"
         onClick={() => {
           handleActive(null);
         }}
@@ -68,10 +68,10 @@ const Navbar = ({ active, handleActive }) => {
               <React.Fragment key={menuItem.name}>
                 <li>
                   <StyledLink
-                    selected={active === menuItem}
+                    selected={active === menuItem.id}
                     href={`#${menuItem.id}`}
                     onClick={() => {
-                      handleActive(menuItem);
+                      handleActive(menuItem.id);
                     }}
                   >
                     <img src={menuItem.img} alt={menuItem.name} />
@@ -119,11 +119,11 @@ const Navbar = ({ active, handleActive }) => {
                 <MenuItem key={menuItem.name}>
                   <StyledLink
                     toggleMenu={!showMenu}
-                    selected={active === menuItem}
+                    selected={active === menuItem.id}
                     href={`#${menuItem.id}`}
                     onClick={(event) => {
                       handleClose(event);
-                      handleActive(menuItem);
+                      handleActive(menuItem.id);
                     }}
                   >
                     <img src={menuItem.img} alt={menuItem.name} />{" "}

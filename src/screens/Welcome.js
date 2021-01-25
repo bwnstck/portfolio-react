@@ -8,7 +8,7 @@ import { Ninja, Rainbow, TreckieHand } from "../assets/emojis";
 
 const Welcome = () => {
   return (
-    <WelcomeWrapper primary id="outerSpace">
+    <WelcomeWrapper primary id="welcome">
       <TextContainer>
         <h1>Benjamin Weinstock</h1>
         <p>
