@@ -12,15 +12,30 @@ const AboutMe = () => {
       </h2>
       <TextContainer>
         <p>
-          I'am Benjamin, born 1989 in Germany. I studied Social Work, but
-          started working as an Macintosh IT-Consultant in 2012.
+          I'am Benjamin, born 1989 in Germany. In 2010, after a year in Paraguay
+          I studied Social Work in Freiburg. To earn some money I started
+          working as a Macintosh IT-Consultant in 2012.
         </p>
-        <p>Once a week I used to ride as a bike messenger for several years.</p>
+        <p>
+          I also started a small business repairing mobile phones and computers
+          of all kinds from friends and neighbors. After a while I also started
+          programming some small static websites with{" "}
+          <a href="https://jekyllrb.com/">Jekyll</a>.
+          <p>
+            Once a week I also used to ride as a bike messenger for several
+            years in Freiburg.
+          </p>
+        </p>
         <p>
           In October 2020 I participated at a 3 month remote Coding Bootcampe in
           Cologne. The result out of these 3 Months (and of course the
           experience I gained before), led to an App called -=DispoDisco=-. It
-          was done by @domko95 and me.
+          was done in collaboration with{" "}
+          <a href="https://github.com/domko95">@domko95</a>.
+        </p>
+        <p>
+          At the moment I'm in Cologne working with the best colleagues, at{" "}
+          <a href="https://ambient.digital">Ambient Digital</a> :)
         </p>
       </TextContainer>
     </Container>
