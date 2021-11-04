@@ -4,7 +4,10 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <p>
-        made with <span>♥️</span> by bwnstk
+        made with <span>♥️</span> by{" "}
+        <a href="https://github.com/bwnstk" target="_blank" rel="noreferrer">
+          bwnstk
+        </a>
       </p>
       <p>
         Found a mistake? Open an{" "}
@@ -24,6 +27,10 @@ const FooterWrapper = styled.footer`
   padding: 1rem;
   text-align: center;
   height: 70px;
+  > :first-child > a {
+    color: white;
+    text-decoration: none;
+  }
   p {
     font-size: 0.9rem;
   }
@@ -31,7 +38,7 @@ const FooterWrapper = styled.footer`
     transition: var(--transition);
     display: inline-block;
     :hover {
-      transform: scale(1.5);
+      transform: scale(2) rotate(22deg);
     }
   }
   &&:last-child {
