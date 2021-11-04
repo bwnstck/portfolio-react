@@ -15,7 +15,11 @@ const Hiring = () => {
       </h2>
       <p>
         ... for now iam happy at
-        <Ambient href="https://ambient.digital">
+        <Ambient
+          href="https://ambient.digital"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img src={AmbientLogo} alt="Ambient Digital Logo" />
           mbient Digital
         </Ambient>

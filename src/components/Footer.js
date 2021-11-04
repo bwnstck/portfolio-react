@@ -7,7 +7,7 @@ const Footer = () => {
         made with <span>♥️</span> by bwnstk
       </p>
       <p>
-        Found an error? Open an{" "}
+        Found a mistake? Open an{" "}
         <a
           href="https://github.com/bwnstck/portfolio-react/issues"
           target="_blank"
