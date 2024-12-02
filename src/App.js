@@ -63,7 +63,7 @@ function App() {
       <Wrapper>
         <Welcome />
         <Suspense fallback={renderLoader()}>
-          <Hiring />
+          {/* <Hiring /> */}
           <Tech />
           <Projects />
           <AboutMe />
