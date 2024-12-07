@@ -9,7 +9,7 @@ import { Ninja, Rainbow, TreckieHand } from "../assets/emojis";
 const Welcome = () => {
   return (
     <WelcomeWrapper primary id="welcome">
-      {/* <TextContainer>
+      <TextContainer>
         <h1>Benjamin Weinstock</h1>
         <p>
           <img src={Rainbow} alt="Rainbow" /> Web Developer, Tinkerer,
@@ -20,7 +20,7 @@ const Welcome = () => {
       <p>
         ... always up for an adventure! <img src={Ninja} alt="Ninja" />
       </p>
-      <GoDown /> */}
+      <GoDown />
     </WelcomeWrapper>
   );
 };

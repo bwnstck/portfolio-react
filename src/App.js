@@ -1,4 +1,6 @@
 import { lazy, Suspense, useState } from "react";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -13,9 +15,8 @@ const Tech = lazy(() => import("./screens/Tech"));
 const Projects = lazy(() => import("./screens/Projects"));
 const AboutMe = lazy(() => import("./screens/AboutMe"));
 const Contact = lazy(() => import("./screens/Contact"));
-import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 
-const theme = createMuiTheme();
+const theme = createTheme();
 
 const useStyles = makeStyles((theme) => {
   root: {
@@ -68,8 +69,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Navbar handleActive={handleActive} active={active} />
+      <Wrapper>
         <Welcome />
-  
+        <Suspense fallback={renderLoader()}>
+          {/* <Hiring /> */}
+          <Tech />
+          <Projects />
+          <AboutMe />
+          <Contact />
+        </Suspense>
+      </Wrapper>
+      <Footer />
     </ThemeProvider>
   );
 }

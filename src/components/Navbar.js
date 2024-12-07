@@ -1,9 +1,9 @@
 import React from "react";
 
-import IconButton from "@material-ui/core/IconButton";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import MoreVertIcon from "@material-ui/icons/ViewList";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MoreVertIcon from "@mui/icons-material/ViewList";
 
 import styled from "styled-components";
 import GithubSrc from "../assets/logos/github-alt.svg";
@@ -21,7 +21,7 @@ import {
 } from "../assets/emojis";
 
 const menuItems = [
-  { name: "CV", id: "cv", img: Superhero },
+  // { name: "CV", id: "cv", img: Superhero },
   { name: "Tech", id: "tech", img: Computer },
   { name: "Projects", id: "projects", img: Joystick },
   { name: "About", id: "about", img: Ninja },
