@@ -18,21 +18,21 @@ const Contact = () => {
 
       <CardContainer>
         <Card>
-          <a href="mailto:benjamin@weinstock.it">
+          <a href="mailto:benjamin[aet]weinstock[punkt]it">
             <img loading="lazy" src={EMail} alt="Mail" />
             Mail
           </a>
         </Card>
-        <Card
+        {/* <Card
           onClick={() => {
-            alert("Benjamin Weinstock, Louis-Ferdinand-Str. 7, 55733 Cologne");
+            alert("bwnstck");
           }}
         >
           <a href="#contact">
             <img loading="lazy" src={Letter} alt="Letter" />
             Letter
           </a>
-        </Card>
+        </Card> */}
         <Card>
           <a href="https://github.com/bwnstck" target="_blank" rel="noreferrer">
             <img loading="lazy" src={Github} alt="Github" />
