@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DownArrow from "../assets/goDown.svg";
 const GoDown = () => {
   return (
-    <a href="#cv">
+    <a href="#tech">
       <Down src={DownArrow} alt="Go Down" />
     </a>
   );
