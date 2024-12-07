@@ -13,6 +13,15 @@ const Tech = lazy(() => import("./screens/Tech"));
 const Projects = lazy(() => import("./screens/Projects"));
 const AboutMe = lazy(() => import("./screens/AboutMe"));
 const Contact = lazy(() => import("./screens/Contact"));
+import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
+
+const theme = createMuiTheme();
+
+const useStyles = makeStyles((theme) => {
+  root: {
+    // some CSS that accesses the theme
+  }
+});
 
 function App() {
   let welcome, cv, tech, projects, about, contact;
@@ -57,21 +66,11 @@ function App() {
   );
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Navbar handleActive={handleActive} active={active} />
-      <Wrapper>
         <Welcome />
-        <Suspense fallback={renderLoader()}>
-          {/* <Hiring /> */}
-          <Tech />
-          <Projects />
-          <AboutMe />
-          <Contact />
-        </Suspense>
-      </Wrapper>
-      <Footer />
-    </div>
+  
+    </ThemeProvider>
   );
 }
 

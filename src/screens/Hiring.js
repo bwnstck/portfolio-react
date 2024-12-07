@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import Container from "../components/Container";
 // import CV from "../assets/BWeinstockCV2020.pdf";
 import HeaderImg from "../components/HeaderImg";

@@ -5,7 +5,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MoreVertIcon from "@material-ui/icons/ViewList";
 
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import GithubSrc from "../assets/logos/github-alt.svg";
 import NeueFische from "../assets/logos/neueFische.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";

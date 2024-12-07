@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import Avatar from "../components/Avatar";
 import Container, { TextContainer } from "../components/Container";
 import GoDown from "../components/GoDown";
@@ -9,7 +9,7 @@ import { Ninja, Rainbow, TreckieHand } from "../assets/emojis";
 const Welcome = () => {
   return (
     <WelcomeWrapper primary id="welcome">
-      <TextContainer>
+      {/* <TextContainer>
         <h1>Benjamin Weinstock</h1>
         <p>
           <img src={Rainbow} alt="Rainbow" /> Web Developer, Tinkerer,
@@ -20,7 +20,7 @@ const Welcome = () => {
       <p>
         ... always up for an adventure! <img src={Ninja} alt="Ninja" />
       </p>
-      <GoDown />
+      <GoDown /> */}
     </WelcomeWrapper>
   );
 };

@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import Card, { CardContainer } from "../components/Card";
 import Container from "../components/Container";
 import HTML from "../assets/logos/html5.svg";

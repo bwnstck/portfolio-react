@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import Card, { CardContainer } from "../components/Card";
 import Container from "../components/Container";
 import Github from "../assets/logos/github-alt.svg";
