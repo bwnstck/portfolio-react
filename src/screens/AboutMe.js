@@ -12,7 +12,7 @@ const AboutMe = () => {
       </h2>
       <TextContainer>
         <p>
-          I'am Benji, born 1989 in Germany. In 2010, after a year in Paraguay
+          I'am Benjamin, born 1989 in Germany. In 2010, after a year in Paraguay
           I studied Social Work in Freiburg. To earn some money I started
           working as a Macintosh IT-Consultant in 2012.
         </p>
