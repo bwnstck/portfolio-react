@@ -15,6 +15,7 @@ import {
   Computer,
   Dove,
   Joystick,
+  GearIcon,
   Ninja,
   Superhero,
   Invader,
@@ -24,6 +25,7 @@ const menuItems = [
   // { name: "CV", id: "cv", img: Superhero },
   { name: "Tech", id: "tech", img: Computer },
   { name: "Projects", id: "projects", img: Joystick },
+  { name: "Services", id: "services", img: GearIcon },
   { name: "About", id: "about", img: Ninja },
   { name: "Contact", id: "contact", img: Dove },
 ];

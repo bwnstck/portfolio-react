@@ -10,6 +10,7 @@ import GlobalStyle from "./GlobalStyles";
 import Welcome from "./screens/Welcome";
 
 import { isInViewPort } from "./screens/lib/responsiveHelpers";
+import NiceStuff from "./screens/NiceStuff";
 const Hiring = lazy(() => import("./screens/Hiring"));
 const Tech = lazy(() => import("./screens/Tech"));
 const Projects = lazy(() => import("./screens/Projects"));
@@ -19,13 +20,13 @@ const Contact = lazy(() => import("./screens/Contact"));
 const theme = createTheme();
 
 const useStyles = makeStyles((theme) => {
-  root: {
+  {
     // some CSS that accesses the theme
   }
 });
 
 function App() {
-  let welcome, cv, tech, projects, about, contact;
+  let welcome, cv, tech, projects, services, about, contact;
 
   const [active, setActive] = useState(null);
 
@@ -40,6 +41,7 @@ function App() {
     cv = document.getElementById("cv");
     tech = document.getElementById("tech");
     projects = document.getElementById("projects");
+    services = document.getElementById("services");
     about = document.getElementById("about");
     contact = document.getElementById("contact");
   });
@@ -59,6 +61,8 @@ function App() {
         handleActive("projects");
       } else if (about && isInViewPort(about)) {
         handleActive("about");
+      } else if (services && isInViewPort(services)) {
+        handleActive("about");
       } else if ((contact && isInViewPort(contact)) || bottom) {
         handleActive("contact");
       }
@@ -77,6 +81,7 @@ function App() {
           <Tech />
           <Projects />
           <AboutMe />
+          <NiceStuff />
           <Contact />
         </Suspense>
       </Wrapper>
