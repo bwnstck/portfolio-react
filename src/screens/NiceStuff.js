@@ -28,7 +28,7 @@ const NiceStuff = () => {
 
   ];
   return (
-    <Container primary id="services" >
+    <Container id="services" >
       <h2>
         <HeaderImg src={GearIcon} alt="Joystick" /> Services
       </h2>
