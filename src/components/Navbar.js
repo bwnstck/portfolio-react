@@ -7,7 +7,6 @@ import MoreVertIcon from "@mui/icons-material/ViewList";
 
 import styled from "styled-components";
 import GithubSrc from "../assets/logos/github-alt.svg";
-import NeueFische from "../assets/logos/neueFische.svg";
 import LinkedInSrc from "../assets/logos/linkedin.svg";
 import { useState } from "react";
 import { isMobile } from "../screens/lib/responsiveHelpers";
@@ -148,13 +147,6 @@ const Navbar = ({ active, handleActive }) => {
         >
           <Social src={LinkedInSrc} alt="LinkedIn" />
         </a>
-        <a
-          href="https://talents.neuefische.com/student/bb798f02-f7b7-402a-beaf-c15f1e5cfd80"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Social src={NeueFische} alt="neue Fische Portfolio" />
-        </a>
       </div>
     </NavbarWrapper>
   );
@@ -170,7 +162,7 @@ const PopupMenu = styled.div`
 `;
 const StyledLink = styled.a`
   margin: auto;
-  font-size: clamp(0.8rem, 6vw, 1.4rem);
+  font-size: clamp(0.5rem, 4vw, 1.2rem);
   transition: var(--transition);
   cursor: pointer;
   text-decoration: none;
@@ -196,7 +188,7 @@ const NavbarWrapper = styled.nav`
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1rem;
   min-height: 70px;
   background-color: var(--text-secondary);

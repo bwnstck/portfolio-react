@@ -2,9 +2,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-  > * :not(:first-child) {
-    margin-top: 1rem;
-  }
   display: flex;
   flex-direction: column;
   align-items: center;

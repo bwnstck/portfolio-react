@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Card, { CardContainer } from "../components/Card";
 import Container from "../components/Container";
 import PWPush from "../assets/pwpush_bgrnd.png";
+import Kutt from "../assets/kutt_bgrnd.png";
 import Etherpad from "../assets/etherpad_bgrnd.png";
 import HeaderImg from "../components/HeaderImg";
 import { GearIcon } from "../assets/emojis";
@@ -24,6 +25,14 @@ const NiceStuff = () => {
       link: "https://pad.weinstock.it",
       linkText: "Etherpad",
       src: Etherpad,
+    },
+    {
+      title: "Kutt",
+      sub: "URL-Shortener",
+      type: "",
+      link: "https://kutt.weinstock.it",
+      linkText: "Kutt",
+      src: Kutt,
     },
 
   ];
@@ -67,7 +76,7 @@ const NiceStuffContainer = styled(Card)`
       background-color: rgba(0, 0, 0, 0);
     }
     img {
-      filter: blur(4px);
+      filter: blur(5px);
     }
     h4 {
       transform: scale(1.1);
@@ -78,7 +87,7 @@ const NiceStuffContainer = styled(Card)`
     width: 100%;
     height: 100%;
     vertical-align: middle;
-    filter: blur(5px);
+    filter: blur(7px);
   }
 
   > div {
@@ -94,7 +103,7 @@ const NiceStuffContainer = styled(Card)`
     padding: 1rem;
     padding-bottom: 2rem;
     border-radius: calc(0.25rem - 1px);
-    filter: drop-shadow(0 0 6px black);
+    filter: drop-shadow(0 0 6px purple);
     h4 {
       text-shadow: 0 0 #f4166e;
       transition: all 0.5s ease-in-out;
