@@ -1,82 +1,92 @@
 import React from "react";
 import styled from "styled-components";
-import Card, { CardContainer } from "../components/Card";
-import Container from "../components/Container";
+import AlleyCatCreator from "../assets/alleycatCreator.png";
 import DispoDisco from "../assets/dispodisco.png";
+import { Joystick } from "../assets/emojis";
 import GoBang from "../assets/playgobang.png";
 import RealDecide from "../assets/realdecide.png";
 import Vulvemory from "../assets/vulvemory.png";
+import Card, { CardContainer } from "../components/Card";
+import Container from "../components/Container";
 import HeaderImg from "../components/HeaderImg";
-import { Joystick } from "../assets/emojis";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "= DispoDisco =-",
-      sub: "App for bike messengers",
-      type: "Capstone Project 2020 ",
-      link: "https://neuefische.de",
-      linkText: "@neuefische",
-      depl: "https://dispodisco.herokuapp.com",
-      github: "https://github.com/DiscoDevs/DispoDisco",
-      src: DispoDisco,
-    },
-    {
-      title: "= GoBang =-",
-      sub: "digital version of the small 'Go'-Game",
-      type: "Hobby Project 2020",
-      depl: "https://playgobang.vercel.app",
-      github: "https://github.com/bwnstck/gobang",
-      src: GoBang,
-    },
-    {
-      title: "= realDecide =-",
-      sub: "localStorage Version of wheeldecide",
-      type: "Hobby Project 2020",
-      depl: "https://realdecide.vercel.app",
-      github: "https://github.com/bwnstck/realdecide",
-      src: RealDecide,
-    },
-    {
-      title: "= Vulvemory =-",
-      sub: "a simple memory Game",
-      type: "Hobby Project 2020",
-      depl: "https://vulvemory.vercel.app",
-      github: "https://github.com/verdruckt/vulvemory",
-      src: Vulvemory,
-    },
-  ];
-  return (
-    <Container id="projects" fullHeight>
-      <h2>
-        <HeaderImg src={Joystick} alt="Joystick" /> Projects
-      </h2>
-      <CardContainer>
-        {projects.map((project) => (
-          <Project key={project.title} scaleTo={1.02}>
-            <img loading="lazy" src={project.src} alt={project.title} />
-            <ShaderLayer />
-            <div>
-              <h4>{project.title}</h4>
-              <p>{project.sub}</p>
-              <InfoContainer>
-                <span>{project.type}</span>
-                {project.link && <a href={project.link}>{project.linkText}</a>}
-              </InfoContainer>
-              <LinkContainer>
-                <a href={project.github} target="_blank" rel="noreferrer">
-                  Github
-                </a>
-                <a href={project.depl} target="_blank" rel="noreferrer" d>
-                  Deployment
-                </a>
-              </LinkContainer>
-            </div>
-          </Project>
-        ))}
-      </CardContainer>
-    </Container>
-  );
+	const projects = [
+		{
+			title: "= DispoDisco =-",
+			sub: "App for bike messengers",
+			type: "Capstone Project 2020 ",
+			link: "https://neuefische.de",
+			linkText: "@neuefische",
+			github: "https://github.com/DiscoDevs/DispoDisco",
+			src: DispoDisco,
+		},
+		{
+			title: "= GoBang =-",
+			sub: "digital version of the small 'Go'-Game",
+			type: "Hobby Project 2020",
+			depl: "https://playgobang.vercel.app",
+			github: "https://github.com/bwnstck/gobang",
+			src: GoBang,
+		},
+		{
+			title: "= realDecide =-",
+			sub: "localStorage Version of wheeldecide",
+			type: "Hobby Project 2020",
+			depl: "https://realdecide.vercel.app",
+			github: "https://github.com/bwnstck/realdecide",
+			src: RealDecide,
+		},
+		{
+			title: "= Vulvemory =-",
+			sub: "a simple memory Game",
+			type: "Hobby Project 2020",
+			depl: "https://vulvemory.vercel.app",
+			github: "https://github.com/verdruckt/vulvemory",
+			src: Vulvemory,
+		},
+		{
+			title: "Alleycat Creator 7000",
+			sub: "a Platform to create Alleycats",
+			type: "Hobby Project 2025",
+			src: AlleyCatCreator,
+		},
+	];
+	return (
+		<Container id="projects" fullHeight>
+			<h2>
+				<HeaderImg src={Joystick} alt="Joystick" /> Projects
+			</h2>
+			<CardContainer>
+				{projects.map((project) => (
+					<Project key={project.title} scaleTo={1.02}>
+						<img loading="lazy" src={project.src} alt={project.title} />
+						<ShaderLayer />
+						<div>
+							<h4>{project.title}</h4>
+							<p>{project.sub}</p>
+							<InfoContainer>
+								<span>{project.type}</span>
+								{project.link && <a href={project.link}>{project.linkText}</a>}
+							</InfoContainer>
+							<LinkContainer>
+								{project.github && (
+									<a href={project.github} target="_blank" rel="noreferrer">
+										Github
+									</a>
+								)}
+								{project.depl && (
+									<a href={project.depl} target="_blank" rel="noreferrer" d>
+										Deployment
+									</a>
+								)}
+							</LinkContainer>
+						</div>
+					</Project>
+				))}
+			</CardContainer>
+		</Container>
+	);
 };
 const ShaderLayer = styled.div`
   transition: var(--transition);

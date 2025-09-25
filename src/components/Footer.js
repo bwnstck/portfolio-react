@@ -1,26 +1,26 @@
 import styled from "styled-components";
 
 const Footer = () => {
-  return (
-    <FooterWrapper>
-      <p>
-        made with <span>♥️</span> by{" "}
-        <a href="https://github.com/bwnstk" target="_blank" rel="noreferrer">
-          bwnstk
-        </a>
-      </p>
-      <p>
-        Found a mistake? Open an{" "}
-        <a
-          href="https://github.com/bwnstck/portfolio-react/issues"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Issue!
-        </a>
-      </p>
-    </FooterWrapper>
-  );
+	return (
+		<FooterWrapper>
+			<p>
+				made with <span>♥</span> by{" "}
+				<a href="https://github.com/bwnstck" target="_blank" rel="noreferrer">
+					bwnstk
+				</a>
+			</p>
+			<p>
+				Found a mistake? Open an{" "}
+				<a
+					href="https://github.com/bwnstck/portfolio-react/issues"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Issue!
+				</a>
+			</p>
+		</FooterWrapper>
+	);
 };
 
 const FooterWrapper = styled.footer`
